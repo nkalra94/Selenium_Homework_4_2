@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OrderMyStorePage {
+public class OrdeStorePage {
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/p[2]/a[1]/span")
     WebElement proceedToCheckoutFromSummaryBtm;
@@ -61,7 +61,7 @@ public class OrderMyStorePage {
     }
 
 
-    public OrderMyStorePage(WebDriver driver) {
+    public OrdeStorePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 }

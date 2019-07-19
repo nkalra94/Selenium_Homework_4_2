@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class AddressMyStorePage {
+public class AddressPage {
     @FindBy(id = "address1")
     private WebElement addressFieldInput;
 
@@ -49,7 +49,7 @@ public class AddressMyStorePage {
         saveChangesBtm.click();
     }
 
-    public AddressMyStorePage(WebDriver driver) {
+    public AddressPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 }

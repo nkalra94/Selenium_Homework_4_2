@@ -17,12 +17,12 @@ import java.util.concurrent.TimeUnit;
 
 public class MyStepdefs {
     MyStorePage myStorePage;
-    AddressMyStorePage addressMyStorePage;
-    BlouseMyStorePage blouseMyStorePage;
+    AddressPage addressPage;
+    MySPage mySPage;
     LoginPage loginPage;
     MyAccountPage myAccountPage;
-    OrderMyStorePage orderMyStorePage;
-    WomanMyStorePage womanMyStorePage;
+    OrdeStorePage ordeStorePage;
+    WomanMPage womanMPage;
     WebDriver driver;
 
 
@@ -30,16 +30,21 @@ public class MyStepdefs {
 
     @Before
     public void setUp (){
-        System.setProperty("webdriver.chrome.driver", "c:\\Vika testing\\SELENIUM!\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\nkalra\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        //System.setProperty("webdriver.gecko.driver", "C:\\Users\\nkalra\\Downloads\\Midterm\\geckodriver.exe");
+        //WebDriver driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         myStorePage = new MyStorePage(driver);
-        addressMyStorePage = new AddressMyStorePage(driver);
-        blouseMyStorePage = new BlouseMyStorePage(driver);
+        addressPage = new AddressPage(driver);
+        mySPage = new MySPage(driver);
         loginPage = new LoginPage(driver);
         myAccountPage = new MyAccountPage(driver);
-        orderMyStorePage = new OrderMyStorePage(driver);
-        womanMyStorePage = new WomanMyStorePage(driver);
+        ordeStorePage = new OrdeStorePage(driver);
+        womanMPage = new WomanMPage(driver);
 
 
 
@@ -73,113 +78,114 @@ public class MyStepdefs {
 
     }
 
-    @And("^goes to the women closes$")
-    public void goesToTheWomenCloses() {
-
+        @And("^goes to the women clothes$")
+    public void goesToTheWomenClothes() {
         myAccountPage.goToWomenCloses();
 
     }
 
-    @And("^choosing a closes$")
-    public void choosingACloses()  {
-        womanMyStorePage.selectRandomCloses();
+
+    @And("^choosing a clothes$")
+    public void choosingAClothes() {
+        womanMPage.selectRandomCloses();
 
     }
+
 
     @And("^selecting black color of the product$")
     public void selectingBlackColorOfTheProduct() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        blouseMyStorePage.selectBlackColorOfTheBlouse();
+        mySPage.selectBlackColorOfTheBlouse();
 
     }
 
     @And("^adding the product to the cart$")
     public void addingTheProductToTheCart()  {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        blouseMyStorePage.addToCart();
+        mySPage.addToCart();
     }
 
 
     @And("^proceeding to checkout from the product page$")
     public void proceedingToCheckoutFromTheProductPage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        blouseMyStorePage.proceedingToCheckoutFromTheBlousePage();
+        mySPage.proceedingToCheckoutFromTheBlousePage();
     }
 
     @And("^proceeding to checkout from the summary page$")
     public void proceedingToCheckoutFromTheSummaryPage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        orderMyStorePage.proceedToCheckoutFromSummary();
+        ordeStorePage.proceedToCheckoutFromSummary();
 
     }
 
     @And("^clicks on update to change the delivery address$")
     public void clicksOnUpdateToChangeTheDeliveryAddress() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        orderMyStorePage.updateTheDeliveryAddress();
+        ordeStorePage.updateTheDeliveryAddress();
 
     }
 
     @And("^fills the address field$")
     public void fillsTheAddressField() {
-        addressMyStorePage.setAddressFieldInput("1435 w Sacramento blvd");
+        addressPage.setAddressFieldInput("1435 w Sacramento blvd");
 
     }
 
     @And("^fills the city field$")
     public void fillsTheCityField() {
-        addressMyStorePage.setCityFieldInput("San Francisco");
+        addressPage.setCityFieldInput("San Francisco");
 
     }
 
     @And("^select a state$")
     public void selectAState() {
-        addressMyStorePage.setStateSelectInput("California");
+        addressPage.setStateSelectInput("California");
 
     }
 
     @And("^fills the postcode field$")
     public void fillsThePostcodeField() {
-        addressMyStorePage.setPostCodeInput("60015");
+        addressPage.setPostCodeInput("60015");
 
     }
 
     @And("^save changes$")
     public void saveChanges() {
-        addressMyStorePage.saveAddressChanging();
+        addressPage.saveAddressChanging();
 
     }
 
     @And("^proceed to checkout from address page$")
     public void proceedToCheckoutFromAddressPage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        orderMyStorePage.proceedToCheckoutFromAddress();
+        ordeStorePage.proceedToCheckoutFromAddress();
 
     }
 
     @And("^agree to terms of service$")
     public void agreeToTermsOfService() {
-        orderMyStorePage.agreeWithTerms();
+        ordeStorePage.agreeWithTerms();
 
     }
 
     @And("^proceed to checkout from shipping page$")
     public void proceedToCheckoutFromShippingPage() {
-        orderMyStorePage.proceedToCheckoutFromShipping();
+        ordeStorePage.proceedToCheckoutFromShipping();
 
     }
 
     @And("^select to pay by check method$")
     public void selectToPayByCheckMethod() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        orderMyStorePage.payByCheckOption();
+        ordeStorePage.payByCheckOption();
 
     }
 
     @And("^confirming the order$")
     public void confirmingTheOrder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        orderMyStorePage.confirmOrder();
+        ordeStorePage.confirmOrder();
 
     }
 
@@ -194,6 +200,9 @@ public class MyStepdefs {
     public void closing(){
         driver.quit();
     }
+
+
+
 
 
 }

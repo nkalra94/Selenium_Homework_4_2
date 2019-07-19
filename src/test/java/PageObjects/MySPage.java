@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class BlouseMyStorePage {
+public class MySPage {
 
 
     @FindBy (xpath = "//*[@id=\"color_11\"]")
@@ -34,7 +34,7 @@ public class BlouseMyStorePage {
     }
 
 
-    public BlouseMyStorePage (WebDriver driver){
+    public MySPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 

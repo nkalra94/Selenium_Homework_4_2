@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WomanMyStorePage {
+public class WomanMPage {
 
     @FindBy(xpath = "//a[@class='product-name'][contains(text(), 'Blouse')]")
     WebElement randomCloses;
@@ -16,7 +16,7 @@ public class WomanMyStorePage {
     }
 
 
-    public WomanMyStorePage (WebDriver driver){
+    public WomanMPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 }

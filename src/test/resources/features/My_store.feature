@@ -7,8 +7,8 @@ Scenario: Navigating to the shop, choosing a product, changing delivery address,
     And filling the email
     And filling the password
     And clicking sign in
-    And goes to the women closes
-    And choosing a closes
+    And goes to the women clothes
+    And choosing a clothes
     And selecting black color of the product
     And adding the product to the cart
     And proceeding to checkout from the product page
